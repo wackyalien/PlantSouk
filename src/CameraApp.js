@@ -1,6 +1,6 @@
 import React, { useRef, useCallback, useState } from "react";
 import Webcam from "react-webcam";
-import './CameraApp.css'; 
+import './CameraApp.css';
 
 const CameraApp = () => {
   const webcamRef = useRef(null);
@@ -8,26 +8,34 @@ const CameraApp = () => {
 
   // Function to capture image
   const capture = useCallback(() => {
-    const imageSrc = webcamRef.current.getScreenshot();
-    setImageSrc(imageSrc);
+    const image = webcamRef.current.getScreenshot();
+    setImageSrc(image);
   }, [webcamRef]);
 
+  // Set constraints for back camera
+  const videoConstraints = {
+    facingMode: "environment" // Use "environment" for the rear camera
+  };
+
   return (
-    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+    <div className="webcam-container">
+      {/* Webcam component with video constraints */}
       <Webcam
         audio={false}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
+        videoConstraints={videoConstraints} // Applying constraints for the back camera
         style={{ width: '100%' }}
       />
       <button onClick={capture}>Capture Photo</button>
 
+      {/* Display the captured image */}
       {imageSrc && (
         <div className="captured-image">
-            <h3>Captured Image:</h3>
-            <img src={imageSrc} alt="Captured" />
+          <h3>Captured Image:</h3>
+          <img src={imageSrc} alt="Captured" />
         </div>
-        )}
+      )}
     </div>
   );
 };
