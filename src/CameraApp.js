@@ -5,11 +5,14 @@ import './CameraApp.css';
 const CameraApp = () => {
   const webcamRef = useRef(null);
   const [imageSrc, setImageSrc] = useState(null);
+  const paudaArr = ['rose', 'lily', 'Hibiscus'];
 
   // Function to capture image
   const capture = useCallback(() => {
     const image = webcamRef.current.getScreenshot();
+    const randomIndex = Math.floor(Math.random() * paudaArr.length);
     setImageSrc(image);
+    window.location.href = "https://www.paudhewale.com/search/"+paudaArr[randomIndex]; 
   }, [webcamRef]);
 
   // Set constraints for back camera
@@ -30,12 +33,12 @@ const CameraApp = () => {
       <button onClick={capture}>Capture Photo</button>
 
       {/* Display the captured image */}
-      {imageSrc && (
+      {/* {imageSrc && (
         <div className="captured-image">
           <h3>Captured Image:</h3>
           <img src={imageSrc} alt="Captured" />
         </div>
-      )}
+      )} */}
     </div>
   );
 };
