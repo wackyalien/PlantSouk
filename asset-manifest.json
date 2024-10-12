@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/PlantSouk/static/css/main.baf43181.css",
-    "main.js": "/PlantSouk/static/js/main.d0416d74.js",
+    "main.js": "/PlantSouk/static/js/main.eb310941.js",
     "static/js/453.464ace54.chunk.js": "/PlantSouk/static/js/453.464ace54.chunk.js",
     "index.html": "/PlantSouk/index.html",
     "main.baf43181.css.map": "/PlantSouk/static/css/main.baf43181.css.map",
-    "main.d0416d74.js.map": "/PlantSouk/static/js/main.d0416d74.js.map",
+    "main.eb310941.js.map": "/PlantSouk/static/js/main.eb310941.js.map",
     "453.464ace54.chunk.js.map": "/PlantSouk/static/js/453.464ace54.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.baf43181.css",
-    "static/js/main.d0416d74.js"
+    "static/js/main.eb310941.js"
   ]
 }
